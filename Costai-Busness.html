@@ -1,0 +1,565 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cost AI Business</title><link rel="preconnect" href="https://fonts.googleapis.com"><style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+    padding-top:95px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:18px 30px;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(12px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#00c3ff;
+    letter-spacing:1px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:16px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00c3ff;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:120px 20px 80px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
+    radial-gradient(circle at top right,#0011ff44,transparent 35%),
+    radial-gradient(circle at bottom left,#ff000044,transparent 35%);
+}
+
+.hero h1{
+    font-size:65px;
+    line-height:1.2;
+    margin-bottom:25px;
+    max-width:1000px;
+}
+
+.hero h1 span{
+    color:#00c3ff;
+}
+
+.hero p{
+    max-width:900px;
+    line-height:1.9;
+    color:#d7d7d7;
+    font-size:18px;
+}
+
+.btn{
+    margin-top:35px;
+    padding:16px 40px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(45deg,#ff0000,#0066ff);
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.4s;
+    box-shadow:0 0 25px rgba(0,102,255,0.4);
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.03);
+    box-shadow:0 0 30px rgba(0,195,255,0.6);
+}
+
+.image-box{
+    width:100%;
+    max-width:950px;
+    height:320px;
+    margin-top:50px;
+    border-radius:25px;
+    border:2px dashed rgba(255,255,255,0.3);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:gray;
+    font-size:22px;
+
+    background:rgba(255,255,255,0.03);
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    padding:100px 25px;
+}
+
+.title{
+    text-align:center;
+    font-size:45px;
+    margin-bottom:60px;
+}
+
+.title::after{
+    content:"";
+    width:120px;
+    height:4px;
+    display:block;
+    margin:15px auto;
+    border-radius:10px;
+    background:linear-gradient(to right,red,cyan);
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    padding:20px;
+}
+
+.stat-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:22px;
+    padding:35px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+    transition:0.4s;
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
+    border-color:#00c3ff;
+}
+
+.stat-card h2{
+    font-size:40px;
+    color:#00c3ff;
+    margin-bottom:15px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+    line-height:2;
+    color:#d5d5d5;
+    font-size:18px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;
+    padding:30px;
+    transition:0.4s;
+    backdrop-filter:blur(10px);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#00c3ff;
+    box-shadow:0 0 25px rgba(0,195,255,0.2);
+}
+
+.card h3{
+    margin-bottom:18px;
+    color:#00c3ff;
+    font-size:22px;
+}
+
+.card p{
+    color:#d7d7d7;
+    line-height:1.8;
+}
+
+/* =========================
+   COMMENTS
+========================= */
+
+.comments{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:22px;
+}
+
+.comment{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px;
+    padding:25px;
+    transition:0.4s;
+}
+
+.comment:hover{
+    transform:translateY(-5px);
+}
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:25px;
+}
+
+.comment h3{
+    color:#00c3ff;
+    margin-bottom:15px;
+}
+
+.comment p{
+    color:#d6d6d6;
+    line-height:1.8;
+}
+
+.stars{
+    color:gold;
+    margin-top:15px;
+    font-size:20px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    line-height:2.2;
+    color:#d6d6d6;
+}
+
+.contact a{
+    color:#00c3ff;
+    text-decoration:none;
+}
+
+.contact-box{
+    margin-top:40px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:25px;
+    padding:35px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:35px;
+    text-align:center;
+    background:#02030a;
+    border-top:1px solid rgba(255,255,255,0.08);
+    color:gray;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+body{
+    padding-top:130px;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.hero{
+    padding-top:160px;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.title{
+    font-size:34px;
+}
+
+.image-box{
+    height:220px;
+    font-size:18px;
+}
+
+}
+
+</style></head><body><!-- =========================
+     NAVBAR
+========================= --><nav><div class="logo">
+COST AI BUSINESS
+</div><ul>
+<li><a href="#accueil">Accueil</a></li>
+<li><a href="#about">Qui sommes-nous</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#avis">Avis</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul></nav><!-- =========================
+     HERO
+========================= --><section class="hero" id="accueil"><h1>
+Bienvenue chez <span>COST AI BUSINESS</span>
+</h1><p>Une entreprise technologique moderne créée par
+<b>Cost Nzanzu</b>, un jeune passionné d’informatique,
+d’intelligence artificielle et d’innovation numérique.
+
+Nous développons des solutions intelligentes,
+des outils IA modernes et des services numériques
+pour les passionnés de technologie, les entreprises
+et les utilisateurs du futur.
+
+</p><button class="btn">
+Découvrir nos services
+</button><div class="image-box">
+<img src="Costmoderne.png" alt="Futur Cost ai image">
+</div></section><!-- =========================
+     STATS
+========================= --><section><div class="stats"><div class="stat-card">
+<h2>+500</h2>
+<p>Clients satisfaits</p>
+</div><div class="stat-card">
+<h2>+50</h2>
+<p>Projets réalisés</p>
+</div><div class="stat-card">
+<h2>24H/24</h2>
+<p>Support disponible</p>
+</div><div class="stat-card">
+<h2>100%</h2>
+<p>Innovation numérique</p>
+</div></div></section><!-- =========================
+     ABOUT
+========================= --><section id="about"><h1 class="title">
+QUI SOMMES-NOUS ?
+</h1><div class="about"><p><b>Cost AI Business</b> est une entreprise spécialisée dans :
+
+<br><br>
+
+✔ Intelligence artificielle moderne
+✔ Développement web professionnel
+✔ Création de programmes intelligents
+✔ Vente de produits informatiques
+✔ Formation numérique et informatique
+✔ Assistance technique
+✔ Outils IA sportifs et analytiques
+✔ Innovation digitale
+
+<br><br>
+
+Fondée par <b>Cost Nzanzu</b>,
+l’entreprise est née d’une passion profonde pour
+l’informatique, la technologie et l’évolution numérique.
+
+Notre mission est d’aider la nouvelle génération
+à maîtriser les outils technologiques modernes
+et à créer un futur numérique plus intelligent.
+
+</p><div class="image-box">
+   <img src="Costaiim.jpg" alt="Image de l'entreprise">
+</div></div></section><!-- =========================
+     SERVICES
+========================= --><section id="services"><h1 class="title">
+NOS SERVICES
+</h1><div class="services"><div class="card">
+<h3>🤖 Intelligence Artificielle</h3>
+<p>
+Création d’IA modernes, assistants intelligents
+et outils automatiques innovants.
+</p>
+</div><div class="card">
+<h3>💻 Développement Web</h3>
+<p>
+Conception de sites web rapides, modernes
+et professionnels pour entreprises et particuliers.
+</p>
+</div><div class="card">
+<h3>🛒 Vente Informatique</h3>
+<p>
+Produits numériques et matériels informatiques
+de qualité professionnelle.
+</p>
+</div><div class="card">
+<h3>🎓 Formation Numérique</h3>
+<p>
+Apprendre la programmation, l’IA
+et les nouvelles technologies.
+</p>
+</div><div class="card">
+<h3>📊 IA Sportive</h3>
+<p>
+Outils intelligents de prédictions et analyses sportives.
+</p>
+</div><div class="card">
+<h3>🛠 Support Technique</h3>
+<p>
+Assistance rapide pour vos programmes,
+applications et systèmes numériques.
+</p>
+</div></div></section><!-- =========================
+     COMMENTAIRES
+========================= --><section id="avis"><h1 class="title">
+COMMENTAIRES DES UTILISATEURS
+</h1><div class="comments"><div class="comment">
+<h3>Gerstyne</h3>
+<p>
+J'adore vraiment, c'est la meilleure entreprise.
+</p>
+<div class="stars">★★★★★</div>
+</div><div class="comment">
+<h3>Loup Solitaire</h3>
+<p>
+C'est du pur talent, j'adore les produits de l'entreprise.
+</p>
+<div class="stars">★★★★★</div>
+</div><div class="comment">
+<h3>Kayembe Merv.057</h3>
+<p>
+Carrément génial, c'est du flow.
+</p>
+<div class="stars">★★★★★</div>
+</div><div class="comment">
+<h3>Beya Bjm.007</h3>
+<p>
+Je prédis tous mes matchs grâce aux IA de cette entreprise.
+</p>
+<div class="stars">★★★★★</div>
+</div><div class="comment">
+<h3>Migagaya Rg</h3>
+<p>
+Je travaille dans cette entreprise et je ne suis pas déçu.
+</p>
+<div class="stars">★★★★★</div>
+</div><div class="comment">
+<h3>Emy chou.net</h3>
+<p>
+Haute gamme, j'adore.
+</p>
+<div class="stars">★★★★★</div>
+</div><div class="comment">
+<h3>Ir Nathan</h3>
+<p>
+Si vous êtes passionné d'informatique je vous recommande.
+</p>
+<div class="stars">★★★★★</div>
+</div></div></section><!-- =========================
+     CONTACT
+========================= --><section id="contact"><h1 class="title">
+CONTACTEZ-NOUS
+</h1><div class="contact"><div class="contact-box"><h2>Bonjour 👋 Bienvenue chez COST AI !</h2><br><p>
+Comment pouvons-nous vous aider aujourd’hui ?
+</p><br><p>
+ℹ️ Renseignements sur l’entreprise
+</p><p>
+🛒 Achats / Commandes
+</p><p>
+🤝 Propositions de collaboration
+</p><p>
+💼 Opportunités d’emploi
+</p><p>
+🎓 Formations / Apprendre avec nous
+</p><p>
+🛠️ Support technique / Problème sur un programme
+</p><br><p>
+Merci pour votre confiance 😊
+</p><br><br>
+
+<p>
+📞 Téléphone : +243 861 612 835
+</p><p>
+👨‍💼 Contact DG : 0989788253
+</p><p>
+📘 Facebook :
+<a href="https://www.facebook.com/profile.php?id=61590567722813" target="_blank">
+Notre page Facebook
+</a>
+</p><p>
+📧 Gmail : AJOUTEZ VOTRE GMAIL ICI
+</p></div></div></section><!-- =========================
+     FOOTER
+========================= --><footer>© 2026 COST AI BUSINESS — Créé par Cost Nzanzu
+
+</footer></body>
+</html>
